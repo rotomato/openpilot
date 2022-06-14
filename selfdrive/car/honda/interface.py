@@ -141,8 +141,8 @@ class CarInterface(CarInterfaceBase):
       ret.steerRatio = 16.33  # 11.82 is spec end-to-end
       ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 4096], [0, 4096]]  # TODO: determine if there is a dead zone at the top end
       if Params().get_bool('Torque'):
-        MAX_LAT_ACCEL = 2.0 if eps_modified else 1.0
-        friction = 0.05 if eps_modified else 0.1
+        MAX_LAT_ACCEL = 1.6 if eps_modified else 1.0
+        friction = 0.21 if eps_modified else 0.1
         
         ret.lateralTuning.init('torque')
         ret.lateralTuning.torque.useSteeringAngle = True
